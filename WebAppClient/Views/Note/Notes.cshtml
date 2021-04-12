@@ -5,7 +5,11 @@
     Layout = "_Layout";
 }
 
-<h2>AllNotes</h2>
+<div class="d-flex flex-row justify-content-between mb-4">
+    <span class="d-inline"><h2>All Notes</h2></span>
+    @Html.ActionLink("Add Note", "AddNote", "Note", "",new { @class="btn btn-primary", role="button"})
+</div>
+
 <div class="container">
     <table class="table table-hover">
         <thead>
@@ -18,14 +22,14 @@
         </tr>
         </thead>
         <tbody>
-        @foreach (var forecast in this.Model)
+        @foreach (var note in this.Model)
         {
             <tr>
-                <th scope="row">@forecast.Id</th>
-                <td>@forecast.PatientId</td>
-                <td>@forecast.DoctorId</td>
-                <td>@forecast.DiseaseId</td>
-                <td>@forecast.DateVisit.ToString()</td>
+                <th scope="row">@note.Id</th>
+                <td>@note.PatientId</td>
+                <td>@note.DoctorId</td>
+                <td>@note.DiseaseId</td>
+                <td>@note.DateVisit.ToString()</td>
             </tr>
         }
         </tbody>

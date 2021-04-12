@@ -1,0 +1,27 @@
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Add Disease</h2>
+<form method="post" action="/Disease/Put">
+    <div class="form-group">
+        <label for="Name">Name <small class="text-danger"> (requied)</small></label>
+        <input type="text" name="Name" class="form-control" id="Name" aria-describedby="emailHelp" required>
+        
+    </div>
+    <div class="form-group">
+        <label for="Description">Description<small class="text-danger"> (requied)</small></label>
+        <input type="text" name="Description" class="form-control" id="Description" required>
+    </div>
+    <div class="form-group">
+        <label for="Treatment">Treatment</label>
+        <input type="text" name="Treatment" class="form-control" id="Treatment">
+    </div>
+    <div class="form-group">
+        <label for="Annotation">Annotation <small class="text-danger"> </small></label>
+        <input type="text" name="Annotation" class="form-control" id="Annotation" >
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

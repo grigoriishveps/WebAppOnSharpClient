@@ -7,13 +7,13 @@
 <h2>Add Doctor</h2>
 <form method="post" action="/Doctor/Put">
     <div class="form-group">
-        <label for="Initials">Initials</label>
-        <input type="text" name="Initials" class="form-control" id="Initials" aria-describedby="emailHelp">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <label for="Initials">Initials <small class="text-danger"> (requied)</small></label>
+        <input type="text" name="Initials" class="form-control" id="Initials" aria-describedby="emailHelp" required>
+        @* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> *@
     </div>
     <div class="form-group">
-        <label for="Room">Password</label>
-        <input type="text" name="Room" class="form-control" id="Room">
+        <label for="Room">Room <small class="text-danger"> (requied)</small></label>
+        <input type="text" name="Room" class="form-control" id="Room" required>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

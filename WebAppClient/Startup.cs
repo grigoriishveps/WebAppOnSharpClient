@@ -48,6 +48,10 @@ namespace WebAppClient
             {
                 client.BaseAddress = new Uri(this.Configuration.GetSection("ApiOptions")["Url"]);
             });
+            services.AddHttpClient<INoteService, NoteService>(client =>
+            {
+                client.BaseAddress = new Uri(this.Configuration.GetSection("ApiOptions")["Url"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

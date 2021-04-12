@@ -7,13 +7,13 @@ namespace WebAppClient.Models
         
         public IEnumerable<Patient> Patients;
         public IEnumerable<Doctor> Doctors;
-        public IEnumerable<Disease> Disease;
+        public IEnumerable<Disease> Diseases;
 
         public HelpObjects(IEnumerable<Patient> patients, IEnumerable<Doctor> doctors, IEnumerable<Disease> disease)
         {
             Patients = patients;
             Doctors = doctors;
-            Disease = disease;
+            Diseases = disease;
         }
     }
 }
