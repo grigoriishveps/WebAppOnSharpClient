@@ -30,8 +30,6 @@ namespace WebAppClient.Services.Implementations
         public async Task<Street> GetStreet(int id)
         {
             using var response = await this.HttpClient.GetAsync("api/street/" + id);
-            
-            
             response.EnsureSuccessStatusCode();
             var content = await response.Content.ReadAsStringAsync();
             

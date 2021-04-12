@@ -31,7 +31,6 @@ namespace WebAppClient.Services.Implementations
         {
             using var response = await this.HttpClient.GetAsync("api/patient/" + id);
             
-            
             response.EnsureSuccessStatusCode();
             var content = await response.Content.ReadAsStringAsync();
             
@@ -42,7 +41,6 @@ namespace WebAppClient.Services.Implementations
         {
             var sendContent = new StringContent( JsonSerializer.Serialize(patient), Encoding.UTF8, "application/json");
             using var response = await this.HttpClient.PutAsync("api/patient",sendContent);
-            System.Console.WriteLine(" fdfsdf"  + JsonSerializer.Serialize(patient));
             response.EnsureSuccessStatusCode();
             var content = await response.Content.ReadAsStringAsync();
             

@@ -1,0 +1,48 @@
+@model IEnumerable<Street>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>List Streets</h2>
+
+<form method="post" action="/Street/Put">
+    <div class="d-flex flex-row">
+        <div class="form-group mr-4 mb-3">
+            <label for="Name">Name <small class="text-danger"> (requied)</small></label>
+            <input type="text" name="Name" class="form-control" id="Name" aria-describedby="emailHelp" required>
+                
+        </div>
+       
+        <div class="form-group mr-4 mb-3">
+            <label for="Annotation">Annotation <small class="text-danger"> </small></label>
+            <input type="text" name="Annotation" class="form-control" id="Annotation" >
+        </div>
+        <div class="d-flex flex-column justify-content-end mb-3"><button type="submit" class="btn btn-primary">Submit</button></div>
+    </div>
+</form>
+
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Initials</th>
+            <th scope="col">Annotation</th>
+         
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var street in this.Model)
+        {
+            <tr>
+                <th scope="row">@street.Id</th>
+                <td>@street.Name</td>
+                <td>@street.Annotation</td>
+            
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
